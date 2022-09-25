@@ -1,0 +1,33 @@
+:root {
+    font-family: arial, sans-serif;
+    color: #333;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+#weather {
+    display: none;
+    width: 400px;
+    margin: 0 auto;
+}
+#weather.weather-ready {
+    display: block;
+}
+form label {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5em 0;
+}
+form label > * {
+    flex-grow: 1 1 50%;
+}
+select {
+    width: 50%;
+}
+#weather-output {
+    font-family: monospace;
+}
