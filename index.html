@@ -12,16 +12,26 @@
 
 <section id="weather">
 	<form>
-		<label><span>City:</span><input type="text" required id="city-selection" /></label>
-		<label><span>Country:</span><select id="country-selection"></select></label>
-		<label><span>Units:</span><select id="degrees-selection">
-			<option value="celsius">Celsius</option>
-			<option value="fahrenheit">Fahrenheit</option>
-		</select></label>
+		<label>
+			<span>City:</span>
+			<input type="text" required id="city-selection" />
+		</label>
+		<label>
+			<span>Country:</span>
+			<select id="country-selection"></select>
+		</label>
+		<label>
+			<span>Units:</span>
+			<select id="degrees-selection">
+				<option value="celsius">Celsius</option>
+				<option value="fahrenheit">Fahrenheit</option>
+			</select>
+		</label>
 	</form>
 	<button id="weather-button-get">Find</button>
 	<hr />
 	<section id="weather-output">
+		<div id="weather-output-status" class="weather-status"></div>
 		<span>Temperature:</span> <span id="weather-output-temperature"></span><br />
 		<span>City:</span> <span id="weather-output-city"></span><br />
 		<span>Country:</span> <span id="weather-output-country"></span>

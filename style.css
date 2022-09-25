@@ -1,6 +1,10 @@
 :root {
     font-family: arial, sans-serif;
     color: #333;
+    line-height: 1.5em;
+}
+* {
+    box-sizing: border-box;
 }
 body {
     display: flex;
@@ -17,17 +21,26 @@ body {
 #weather.weather-ready {
     display: block;
 }
-form label {
+form {
     display: flex;
-    justify-content: space-between;
+    gap: 3px;
     margin: 0.5em 0;
 }
-form label > * {
-    flex-grow: 1 1 50%;
+form label {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
 }
-select {
-    width: 50%;
+form select, form input {
+    width: 100%;
 }
 #weather-output {
     font-family: monospace;
+}
+.weather-status {
+    color: #cc0;
+}
+.weather-not-found {
+    color: #c00;
+    font-weight: bold;
 }

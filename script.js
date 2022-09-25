@@ -54,6 +54,7 @@ const elements = {
     units: document.querySelector("#degrees-selection"),
     btn: document.querySelector("#weather-button-get"),
     output: {
+        status: document.querySelector("#weather-output-status"),
         temp: document.querySelector("#weather-output-temperature"),
         city: document.querySelector("#weather-output-city"),
         country: document.querySelector("#weather-output-country")
@@ -79,15 +80,19 @@ fetch("./countries.json").then(req => {
     elements.section.classList.add("weather-ready");
     elements.btn.addEventListener("click", e => {
         sealForm();
+        elements.output.status.classList.remove("weather-not-found");
+        elements.output.status.textContent = "Loading...";
         getWeather(elements.city.value, elements.country.value, elements.units.value).then(data => {
             console.log(data);
             updateOutput(data.value, data.city, data.country);
+            elements.output.status.textContent = "";
             unsealForm();
         }).catch(err => {
             console.error("failed to load resource:", err.message);
             updateOutput("", "", "");
+            elements.output.status.classList.add("weather-not-found");
+            elements.output.status.textContent = "Location not found";
             unsealForm();
-            alert("Location not found");
         });        
     });
 });
